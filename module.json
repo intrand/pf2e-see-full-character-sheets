@@ -18,5 +18,8 @@
         "compatibility": {}
       }
     ]
-  }
+  },
+  "download": "https://github.com/intrand/pf2e-see-full-character-sheets/releases/download/versionNumberToBeInsertedByAutomation/module.zip",
+  "manifest": "https://github.com/intrand/pf2e-see-full-character-sheets/releases/latest/download/module.json",
+  "url": "https://github.com/intrand/pf2e-see-full-character-sheets"
 }
