@@ -1,0 +1,22 @@
+{
+  "id": "pf2e-see-full-character-sheets",
+  "title": "PF2E See Full Character Sheets",
+  "description": "Allows players to see the full character sheets of members of the active party.",
+  "version": "0.0.5",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "scripts": [
+    "sheet.js"
+  ],
+  "relationships": {
+    "requires": [
+      {
+        "id": "lib-wrapper",
+        "type": "module",
+        "compatibility": {}
+      }
+    ]
+  }
+}
