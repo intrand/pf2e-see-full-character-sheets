@@ -32,3 +32,25 @@ jobs:
           artifacts: ./module.json, ./module.zip
           tag: ${{ github.ref_name }}
           generateReleaseNotes: true
+
+      - name: create foundry release
+        run: |
+          curl \
+            -X POST \
+            -H "Authorization: ${{ secrets.FVTT_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "id": "${{ github.event.repository.name }}",
+              "dry-run": true,
+              "release": {
+                "version": "${{ github.ref_name }}",
+                "manifest": "${{ github.server_url }}/${{ github.repository }}/releases/download/${{ github.ref_name }}/module.json",
+                "notes": "${{ github.server_url }}/${{ github.repository }}/commits/${{ github.ref_name }}",
+                "compatibility": {
+                  "minimum": "13",
+                  "verified": "13",
+                  "maximum": "13"
+                }
+              }
+            }' \
+            https://foundryvtt.com/_api/packages/release_version/
